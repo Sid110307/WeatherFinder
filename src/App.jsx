@@ -22,8 +22,10 @@ export default function App() {
 	const [dateTime, setDateTime] = React.useState("unknown");
 
 	const [showModal, setShowModal] = React.useState(false);
+	const [advancedMode, setAdvancedMode] = React.useState(false);
 	const [modalDisabled, setModalDisabled] = React.useState(false);
 
+	const blocksRef = React.useRef(null);
 	const containerRef = React.useRef(null);
 	const temperatureValueRef = React.useRef(null);
 	const notificationRef = React.useRef(null);
@@ -129,11 +131,30 @@ export default function App() {
 			!showModal && getGeolocation();
 		};
 
+		blocksRef.current.childNodes.forEach((child, i) => {
+			child.style.animationDelay = `${i + 15}s`;
+			child.style.left = `${(Math.random() * 100) << 0}%`;
+		});
+
+		setInterval(
+			() =>
+				blocksRef.current.childNodes.forEach(
+					(child, _) =>
+						(child.style.left = `${(Math.random() * 100) << 0}%`)
+				),
+			blocksRef.current.childNodes.length * 1000
+		);
+
 		getGeolocation();
-	}, [localeContext, showModal, t]);
+	}, [advancedMode, localeContext, showModal, t]);
 
 	return (
 		<React.Fragment>
+			<div className="blocks" ref={blocksRef}>
+				{[...Array(15)].map((_, i) => (
+					<div key={i} className="block" />
+				))}
+			</div>
 			<div className="container" ref={containerRef}>
 				<div className="app-title">
 					<p>WeatherFinder</p>
@@ -180,11 +201,49 @@ export default function App() {
 							{t("Coordinates")}: <span>{coordinates}</span>
 						</p>
 					</div>
+					<div
+						className="advanced-mode-btn-wrapper"
+						style={{
+							transform: `translateY(${
+								advancedMode ? "280px" : 0
+							})`,
+							zIndex: advancedMode ? 1 : 0,
+						}}
+					>
+						<button
+							className="advanced-mode-btn"
+							onClick={() => setAdvancedMode(!advancedMode)}
+						>
+							<span
+								className="fas fa-arrow-down"
+								style={{
+									transform: `rotate(${
+										advancedMode ? "180deg" : 0
+									})`,
+								}}
+							/>
+						</button>
+					</div>
+					<div
+						className="advanced-mode-container"
+						style={{
+							visibility: advancedMode ? "visible" : "hidden",
+							opacity: advancedMode ? 1 : 0,
+						}}
+					>
+						<div className="data">
+							<p>
+								{/* TODO: {t("Wind")}: <span>{windSpeed} ({windDirection})</span> */}
+							</p>
+						</div>
+					</div>
 				</div>
 				<div
 					className="app-title"
 					style={{
-						marginTop: "clamp(20px, 50%, 40px)",
+						marginTop: advancedMode
+							? 330
+							: "clamp(20px, 50%, 50px)",
 						fontSize: "0.5rem",
 					}}
 				>
@@ -215,7 +274,7 @@ export default function App() {
 							disabled={modalDisabled}
 							onClick={() => setShowModal(false)}
 						>
-							<span className="fas fa-times" />
+							<span className="fas fa-xmark" />
 						</button>
 					</div>
 					<div className="modal-body">

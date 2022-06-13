@@ -7,6 +7,7 @@ import "./styles/index.scss";
 import "./styles/components/weather.scss";
 import "./styles/components/settingsButton.scss";
 import "./styles/components/modal.scss";
+import "./styles/components/advancedMode.scss";
 
 class ErrorBoundary extends React.Component {
 	constructor(props) {

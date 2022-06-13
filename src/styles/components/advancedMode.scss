@@ -1,0 +1,62 @@
+@use "../index" as var;
+
+.advanced-mode-btn {
+	position: fixed;
+	width: 30px;
+	height: 30px;
+	background-color: var.$secondary-color;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	transition: all 0.5s ease;
+
+	span {
+		color: var.$primary-color;
+	}
+
+	&:hover,
+	&:active {
+		background-color: var.$primary-color;
+
+		span {
+			color: var.$secondary-color;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:active {
+		transform: scale(0.9);
+	}
+}
+
+.advanced-mode-btn-wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 10px;
+	transition: all 0.5s ease;
+	position: fixed;
+}
+
+.advanced-mode-container {
+	position: fixed;
+	margin-top: 10px;
+	right: 0;
+	width: 300px;
+	height: 300px;
+	background-color: var.$secondary-color;
+	border-radius: 20px;
+	display: none;
+	transition: all 0.5s ease;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+}

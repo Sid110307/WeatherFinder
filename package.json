@@ -1,6 +1,6 @@
 {
 	"name": "weatherfinder",
-	"version": "1.1.0",
+	"version": "1.1.5",
 	"description": "A simple weather report website.",
 	"dependencies": {
 		"axios": "^0.27.2",
