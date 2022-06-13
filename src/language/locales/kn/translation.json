@@ -1,0 +1,14 @@
+{
+	"Position acquisition timed out": "ಸ್ಥಾನ ಸ್ವಾಧೀನದ ಅವಧಿ ಮೀರಿದೆ",
+	"User denied geolocation service": "ಬಳಕೆದಾರನ್ನು ಜೆಲೆಕಾರಿಕೆ ಸರಳಿಕೆಯನ್ನು ತಡೆಗಟ್ಟಿದೆ",
+	"Your browser doesn't support location services.": "ನಿಮ್ಮ ಬ್ರೌಸ್ಟರ್ ಜೆಲೆ ಸರಳಿಕೆಯನ್ನು ಸಿಫಿಕರಿಸಲಾಗದು.",
+	"Weather Icon": "ವೀಡರೆ ಚಿತ್ರ",
+	"Nearest location": "ಸಹಜವಾದ ಸ್ಥಾನ",
+	"Coordinates": "ನಿಗದಿಕಿಯನ್ನು",
+	"Developed by Siddharth Praveen Bharadwaj (KV IISc)": "ಸಿದ್ದಾರ್ಥ್ ಪ್ರವೀಣ್ ಭಾರದ್ವಾಜ್ (ಕೆವಿ ಐಐಎಸ್ಸಿ) ಅಭಿವೃದ್ಧಿಪಡಿಸಿದ್ದಾರೆ",
+	"Trying to determine location": "ಸ್ಥಾನವನ್ನು ನಿರ್ಧರಿಸಲಾಗುತ್ತಿರುವುದು",
+	"Settings": "ಸೆಟ್ಟಿಂಗ್ಸ್",
+	"Language": "ಭಾಷೆ",
+	"Main Languages": "ಮುಖಪುಟದ ಭಾಷೆಗಳು",
+	"Regional Languages": "ರಜಿಸ್ಟಲಿಗಳು"
+}

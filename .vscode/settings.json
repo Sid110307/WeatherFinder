@@ -1,3 +1,11 @@
 {
-	"makefile.extensionOutputFolder": "./.vscode"
+	"makefile.extensionOutputFolder": "./.vscode",
+	"files.exclude": {
+		"**/.idea/": true,
+		"**/node_modules/": true,
+		"**/build/": true,
+		"**/package-lock.json": true,
+		"**/yarn*.lo(ck|g)": true,
+		"**/npm*.log": true
+	}
 }

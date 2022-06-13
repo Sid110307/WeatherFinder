@@ -1,0 +1,14 @@
+{
+	"Position acquisition timed out": "পজিচন অধিগ্ৰহণৰ সময় শেষ হৈ গ’ল",
+	"User denied geolocation service": "ব্যবহারকাৰীকে জেলাকোনাইজাকন সেবা নিশ্চিত কৰিব নালাগে",
+	"Your browser doesn't support location services.": "আপোনাৰ ব্রাউজাৰটো জেলাকোনাইজাকন সেবা সমৰ্থন কৰিব নালাগে",
+	"Weather Icon": "ভ্যাটার চিত্ৰ",
+	"Nearest location": "নিকটবর্তী স্থান",
+	"Coordinates": "স্থানীয় মান",
+	"Developed by Siddharth Praveen Bharadwaj (KV IISc)": "বিকশিত কৰিছে সিদ্ধাৰ্থ প্ৰবীণ ভৰদ্বাজ (KV IISc)",
+	"Trying to determine location": "স্থান বিচাৰা চেষ্টা কৰা হৈছে",
+	"Settings": "সেটিং",
+	"Language": "ভাষা",
+	"Main Languages": "মুৰ্যাদি ভাষা",
+	"Regional Languages": "বিভাগীয ভাষা"
+}

@@ -1,0 +1,14 @@
+{
+	"Position acquisition timed out": "অবস্থান অধিগ্রহণের সময় শেষ",
+	"User denied geolocation service": "ব্যবহারকারীর জিপিএলাক্স সেবা না গ্রহণ করেছে",
+	"Your browser doesn't support location services.": "আপনার ব্রাউজার জিপিএলাক্স সেবা সমর্থন করেন না।",
+	"Weather Icon": "আবহাওয়া আইকন",
+	"Nearest location": "সবচেয়ে গুরুত্বপূর্ণ স্থান",
+	"Coordinates": "সংযোগ",
+	"Developed by Siddharth Praveen Bharadwaj (KV IISc)": "সিদ্ধার্থ প্রবীণ ভরদ্বাজ (KV IISc) দ্বারা বিকাশিত",
+	"Trying to determine location": "জিপিএলাক্স সংযোগ নির্ধারণ করার চেষ্টা করছেন",
+	"Settings": "সেটিংস",
+	"Language": "ভাষা",
+	"Main Languages": "মুখ্য ভাষা",
+	"Regional Languages": "রেজিস্টার ভাষা"
+}

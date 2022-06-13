@@ -4,5 +4,7 @@ node_modules/
 build/
 
 package-lock.json
-yarn*.lo(ck|g)
-npm*.log
+yarn.lock
+
+yarn-*.log
+npm-*.log
