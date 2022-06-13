@@ -12,11 +12,6 @@ export default function App() {
 	const { t } = useTranslation();
 	const { localeContext } = React.useContext(LocaleContext);
 
-	const [weatherIcon, setWeatherIcon] = React.useState("unknown");
-	const [weatherType, setWeatherType] = React.useState(
-		"unknown weather type"
-	);
-	const [coordinates, setCoordinates] = React.useState("unknown");
 	const [location, setLocation] = React.useState("unknown");
 	const [dayNight, setDayNight] = React.useState("unknown");
 	const [dateTime, setDateTime] = React.useState("unknown");
@@ -33,13 +28,16 @@ export default function App() {
 	const modalContainerRef = React.useRef(null);
 	const languageRef = React.useRef(null);
 
-	React.useEffect(() => {
-		const weather = {
+	const weather = React.useMemo(
+		() => ({
 			temp: {
 				unit: "celsius",
 			},
-		};
+		}),
+		[]
+	);
 
+	React.useEffect(() => {
 		const changeLocale = l => localeContext !== l && i18n.changeLanguage(l);
 
 		const removePreloader = () => {
@@ -49,9 +47,7 @@ export default function App() {
 
 		const setPosition = position => {
 			getWeather(position.coords.latitude, position.coords.longitude);
-			setCoordinates(
-				`${position.coords.latitude}, ${position.coords.longitude}`
-			);
+			weather.coordinates = `${position.coords.latitude}, ${position.coords.longitude}`;
 
 			removePreloader();
 		};
@@ -78,6 +74,14 @@ export default function App() {
 					weather.country = r.data.location.country;
 					weather.date = r.data.location.localtime;
 
+					weather.windSpeed = r.data.current.wind_kph;
+					weather.windDirectionDeg = r.data.current.wind_degree;
+					weather.windDirection = r.data.current.wind_dir;
+					weather.relativeHumidity = r.data.current.humidity;
+					weather.uvIndex = r.data.current.uv;
+					weather.rainfall = r.data.current.precip_mm;
+					weather.pressure = r.data.current.pressure_mb;
+
 					setDayNight(r.data.current.is_day);
 				})
 				.then(() => displayWeather())
@@ -85,10 +89,8 @@ export default function App() {
 		};
 
 		const displayWeather = () => {
-			setWeatherIcon(weather.iconId);
 			setDateTime(weather.date);
 			temperatureValueRef.current.innerHTML = `${weather.temp.value}°<span>C</span>`;
-			setWeatherType(weather.description);
 			setLocation(
 				`${weather.city}, ${weather.region}, ${weather.country}`
 			);
@@ -132,7 +134,7 @@ export default function App() {
 		};
 
 		blocksRef.current.childNodes.forEach((child, i) => {
-			child.style.animationDelay = `${i + 15}s`;
+			child.style.animationDelay = `${i * 2}s`;
 			child.style.left = `${(Math.random() * 100) << 0}%`;
 		});
 
@@ -146,7 +148,7 @@ export default function App() {
 		);
 
 		getGeolocation();
-	}, [advancedMode, localeContext, showModal, t]);
+	}, [advancedMode, localeContext, showModal, t, weather]);
 
 	return (
 		<React.Fragment>
@@ -180,7 +182,7 @@ export default function App() {
 							src={
 								dayNight === "unknown"
 									? unknownIcon
-									: `https:${weatherIcon}`
+									: `https:${weather.iconId}`
 							}
 							alt={t("Weather Icon")}
 						/>
@@ -189,7 +191,7 @@ export default function App() {
 						<p ref={temperatureValueRef} />
 					</div>
 					<div className="data-big">
-						<p>{weatherType}</p>
+						<p>{weather.description || "unknown weather type"}</p>
 					</div>
 					<div className="data">
 						<p>
@@ -198,7 +200,8 @@ export default function App() {
 					</div>
 					<div className="data">
 						<p>
-							{t("Coordinates")}: <span>{coordinates}</span>
+							{t("Coordinates")}:{" "}
+							<span>{weather.coordinates || "unknown"}</span>
 						</p>
 					</div>
 					<div
@@ -233,7 +236,35 @@ export default function App() {
 					>
 						<div className="data">
 							<p>
-								{/* TODO: {t("Wind")}: <span>{windSpeed} ({windDirection})</span> */}
+								{t("Wind")}:{" "}
+								<span>
+									{weather.windSpeed} km/h (
+									{weather.windDirectionDeg}°{" "}
+									{weather.windDirection})
+								</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								{t("Relative humidity")}:{" "}
+								<span>{weather.relativeHumidity}%</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								{t("UV index")}: <span>{weather.uvIndex}</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								{t("Rainfall")}:{" "}
+								<span>{weather.rainfall} mm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								{t("Pressure")}:{" "}
+								<span>{weather.pressure} hPa</span>
 							</p>
 						</div>
 					</div>
