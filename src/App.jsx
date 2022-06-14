@@ -7,13 +7,10 @@ import LocaleContext from "./language/localeContext";
 
 import unknownIcon from "./icons/unknown.png";
 
-// TODO: Malayalam (ml)+ locales
 export default function App() {
 	const { t } = useTranslation();
 	const { localeContext } = React.useContext(LocaleContext);
 
-	const [location, setLocation] = React.useState("unknown");
-	const [dayNight, setDayNight] = React.useState("unknown");
 	const [dateTime, setDateTime] = React.useState("unknown");
 
 	const [showModal, setShowModal] = React.useState(false);
@@ -29,11 +26,7 @@ export default function App() {
 	const languageRef = React.useRef(null);
 
 	const weather = React.useMemo(
-		() => ({
-			temp: {
-				unit: "celsius",
-			},
-		}),
+		() => ({ temp: { unit: "celsius" }, aqi: {} }),
 		[]
 	);
 
@@ -47,7 +40,9 @@ export default function App() {
 
 		const setPosition = position => {
 			getWeather(position.coords.latitude, position.coords.longitude);
-			weather.coordinates = `${position.coords.latitude}, ${position.coords.longitude}`;
+			weather.coordinates = `${
+				Math.round(position.coords.latitude * 100) / 100
+			}, ${Math.round(position.coords.longitude * 100) / 100}`;
 
 			removePreloader();
 		};
@@ -62,7 +57,7 @@ export default function App() {
 
 		const getWeather = (latitude, longitude) => {
 			axios(
-				`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${latitude},${longitude}&lang=${i18n.language}`
+				`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${latitude},${longitude}&aqi=yes&lang=${i18n.language}`
 			)
 				.then(r => {
 					weather.temp.value = Math.floor(r.data.current.temp_c);
@@ -82,7 +77,40 @@ export default function App() {
 					weather.rainfall = r.data.current.precip_mm;
 					weather.pressure = r.data.current.pressure_mb;
 
-					setDayNight(r.data.current.is_day);
+					weather.aqi.co = parseFloat(
+						r.data.current.air_quality.co
+					).toFixed(2);
+					weather.aqi.o3 = parseFloat(
+						r.data.current.air_quality.o3
+					).toFixed(2);
+					weather.aqi.no2 = parseFloat(
+						r.data.current.air_quality.no2
+					).toFixed(2);
+					weather.aqi.so2 = parseFloat(
+						r.data.current.air_quality.so2
+					).toFixed(2);
+					weather.aqi.pm25 = parseFloat(
+						r.data.current.air_quality.pm2_5
+					).toFixed(2);
+					weather.aqi.pm10 = parseFloat(
+						r.data.current.air_quality.pm10
+					).toFixed(2);
+
+					const epaIndexes = [
+						"Very Good",
+						"Good",
+						"Moderate",
+						"Unhealthy",
+						"Very Unhealthy",
+						"Hazardous",
+					];
+
+					weather.aqi.epaIndex =
+						epaIndexes[
+							r.data.current.air_quality["us-epa-index"] - 1
+						];
+
+					weather.dayNight = r.data.current.is_day;
 				})
 				.then(() => displayWeather())
 				.catch(e => console.error(e));
@@ -91,9 +119,6 @@ export default function App() {
 		const displayWeather = () => {
 			setDateTime(weather.date);
 			temperatureValueRef.current.innerHTML = `${weather.temp.value}°<span>C</span>`;
-			setLocation(
-				`${weather.city}, ${weather.region}, ${weather.country}`
-			);
 		};
 
 		const getGeolocation = () =>
@@ -180,7 +205,7 @@ export default function App() {
 					<div className="weather-icon">
 						<img
 							src={
-								dayNight === "unknown"
+								weather.dayNight === "unknown"
 									? unknownIcon
 									: `https:${weather.iconId}`
 							}
@@ -195,7 +220,11 @@ export default function App() {
 					</div>
 					<div className="data">
 						<p>
-							{t("Nearest location")}: <span>{location}</span>
+							{t("Nearest location")}:{" "}
+							<span>
+								{weather.city}, {weather.region},{" "}
+								{weather.country}
+							</span>
 						</p>
 					</div>
 					<div className="data">
@@ -208,7 +237,7 @@ export default function App() {
 						className="advanced-mode-btn-wrapper"
 						style={{
 							transform: `translateY(${
-								advancedMode ? "280px" : 0
+								advancedMode ? "430px" : 0
 							})`,
 							zIndex: advancedMode ? 1 : 0,
 						}}
@@ -223,8 +252,10 @@ export default function App() {
 									transform: `rotate(${
 										advancedMode ? "180deg" : 0
 									})`,
+									marginRight: 10,
 								}}
 							/>
+							<p>{t("Advanced mode")}</p>
 						</button>
 					</div>
 					<div
@@ -236,7 +267,7 @@ export default function App() {
 					>
 						<div className="data">
 							<p>
-								{t("Wind")}:{" "}
+								<span>{t("Wind")}</span>
 								<span>
 									{weather.windSpeed} km/h (
 									{weather.windDirectionDeg}°{" "}
@@ -246,25 +277,68 @@ export default function App() {
 						</div>
 						<div className="data">
 							<p>
-								{t("Relative humidity")}:{" "}
+								<span>{t("Relative humidity")}</span>
 								<span>{weather.relativeHumidity}%</span>
 							</p>
 						</div>
 						<div className="data">
 							<p>
-								{t("UV index")}: <span>{weather.uvIndex}</span>
+								<span>{t("UV index")}</span>
+								<span>{weather.uvIndex}</span>
 							</p>
 						</div>
 						<div className="data">
 							<p>
-								{t("Rainfall")}:{" "}
+								<span>{t("Rainfall")}</span>
 								<span>{weather.rainfall} mm</span>
 							</p>
 						</div>
 						<div className="data">
 							<p>
-								{t("Pressure")}:{" "}
+								<span>{t("Pressure")}</span>
 								<span>{weather.pressure} hPa</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{t("Carbon Monoxide")}</span>
+								<span>{weather.aqi.co} ppm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{t("Ozone")}</span>
+								<span>{weather.aqi.o3} ppm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{t("Nitrogen Dioxide")}</span>
+								<span>{weather.aqi.no2} ppm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{t("Sulfur Dioxide")}</span>
+								<span>{weather.aqi.so2} ppm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{"PM 2.5"}</span>
+								<span>{weather.aqi.pm25} ppm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{"PM 10"}</span>
+								<span>{weather.aqi.pm10} ppm</span>
+							</p>
+						</div>
+						<div className="data">
+							<p>
+								<span>{t("Air quality")}</span>
+								<span>{t(weather.aqi.epaIndex)}</span>
 							</p>
 						</div>
 					</div>
@@ -273,7 +347,7 @@ export default function App() {
 					className="app-title"
 					style={{
 						marginTop: advancedMode
-							? 330
+							? 480
 							: "clamp(20px, 50%, 50px)",
 						fontSize: "0.5rem",
 					}}

@@ -14,9 +14,9 @@ i18n.use(Backend)
 			escapeValue: false,
 		},
 		resources: {
-			en: { translation: require("./locales/en/translation.json") },
 			as: { translation: require("./locales/as/translation.json") },
 			bn: { translation: require("./locales/bn/translation.json") },
+			en: { translation: require("./locales/en/translation.json") },
 			gu: { translation: require("./locales/gu/translation.json") },
 			hi: { translation: require("./locales/hi/translation.json") },
 			kn: { translation: require("./locales/kn/translation.json") },
