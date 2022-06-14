@@ -6,6 +6,10 @@
 		"**/build/": true,
 		"**/package-lock.json": true,
 		"**/yarn*.lo(ck|g)": true,
-		"**/npm*.log": true
+		"**/npm*.log": true,
+		"**/yarn.lock": true,
+		"**/yarn-*.log": true,
+		"**/npm-*.log": true,
+		"**/.markdownlint.yml": true
 	}
 }

@@ -433,6 +433,26 @@ export default function App() {
 							</div>
 						</div>
 					</div>
+					<div className="modal-body modal-footer">
+						<p>
+							{t("Weather data provided by")}:{" "}
+							<a
+								href="https://weatherapi.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								WeatherAPI
+							</a>{" "}
+							|{" "}
+							<a
+								href="https://github.com/Sid110307/WeatherFinder/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{t("Source code for this project")}
+							</a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</React.Fragment>

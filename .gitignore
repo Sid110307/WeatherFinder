@@ -1,10 +1,8 @@
 .idea/
-
 node_modules/
 build/
-
 package-lock.json
 yarn.lock
-
 yarn-*.log
 npm-*.log
+.markdownlint.yml
