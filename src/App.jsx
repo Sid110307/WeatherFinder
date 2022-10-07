@@ -118,7 +118,7 @@ export default function App() {
 
 		const displayWeather = () => {
 			setDateTime(weather.date);
-			temperatureValueRef.current.innerHTML = `${weather.temp.value}°<span>C</span>`;
+			temperatureValueRef.current.innerHTML = `${require("dompurify").sanitize(weather.temp.value)}°<span>C</span>`;
 		};
 
 		const getGeolocation = () =>
