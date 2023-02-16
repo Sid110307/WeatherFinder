@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/WeatherFinder/static/css/main.f52de409.css",
+    "main.js": "/WeatherFinder/static/js/main.51a22af0.js",
+    "index.html": "/WeatherFinder/index.html",
+    "static/media/getFetch.cjs": "/WeatherFinder/static/media/getFetch.c780682470504fffbd04.cjs",
+    "main.f52de409.css.map": "/WeatherFinder/static/css/main.f52de409.css.map",
+    "main.51a22af0.js.map": "/WeatherFinder/static/js/main.51a22af0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f52de409.css",
+    "static/js/main.51a22af0.js"
+  ]
+}
