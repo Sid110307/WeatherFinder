@@ -127,7 +127,7 @@ export default function App() {
 						setPosition,
 						showError,
 						{
-							timeout: 20000,
+							timeout: 60000,
 							maximumAge: Infinity,
 						}
 				  )

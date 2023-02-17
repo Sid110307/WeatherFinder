@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "অবস্থান অধিগ্রহণের সময় শেষ",
-	"User denied geolocation service": "ব্যবহারকারী ভৌগলিক অবস্থান পরিষেবা অস্বীকার করেছে৷",
+	"Geolocation denied or connection failed": "ভূ-অবস্থান অস্বীকার করা হয়েছে বা সংযোগ ব্যর্থ হয়েছে৷",
 	"Your browser doesn't support location services.": "আপনার ব্রাউজার অবস্থান পরিষেবা সমর্থন করে না.",
 	"Weather Icon": "আবহাওয়া আইকন",
 	"Nearest location": "নিকটতম অবস্থান",

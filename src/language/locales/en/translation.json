@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "Position acquisition timed out",
-	"User denied geolocation service": "User denied geolocation service",
+	"Geolocation denied or connection failed": "Geolocation denied or connection failed",
 	"Your browser doesn't support location services.": "Your browser doesn't support location services.",
 	"Weather Icon": "Weather Icon",
 	"Nearest location": "Nearest location",

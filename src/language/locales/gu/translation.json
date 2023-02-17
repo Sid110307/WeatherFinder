@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "પદ સંપાદનનો સમય સમાપ્ત થયો",
-	"User denied geolocation service": "વપરાશકર્તાએ ભૌગોલિક સ્થાન સેવા નકારી",
+	"Geolocation denied or connection failed": "ભૌગોલિક સ્થાન નકાર્યું અથવા કનેક્શન નિષ્ફળ થયું",
 	"Your browser doesn't support location services.": "તમારું બ્રાઉઝર સ્થાન સેવાઓને સપોર્ટ કરતું નથી.",
 	"Weather Icon": "હવામાન ચિહ્ન",
 	"Nearest location": "નજીકનું સ્થાન",

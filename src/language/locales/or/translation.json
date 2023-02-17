@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "ପଦବୀ ଅଧିଗ୍ରହଣ ସମୟ ସମାପ୍ତ ହୋଇଛି",
-	"User denied geolocation service": "ଉପଭୋକ୍ତା ଜିଓଲୋକେସନ୍ ସେବାକୁ ପ୍ରତ୍ୟାଖ୍ୟାନ କଲେ",
+	"Geolocation denied or connection failed": "ଜିଓ-ଅବସ୍ଥାନ ଅସ୍ୱୀକାର ହୋଇଛି କିମ୍ବା ସଂଯୋଗ ବିଫଳ ହୋଇଛି",
 	"Your browser doesn't support location services.": "ଆପଣଙ୍କର ବ୍ରାଉଜର୍ ଲୋକେସନ ସେବାକୁ ସମର୍ଥନ କରେନାହିଁ",
 	"Weather Icon": "ପାଣିପାଗ ଆଇକନ୍",
 	"Nearest location": "ନିକଟସ୍ଥ ଅବସ୍ଥାନ",

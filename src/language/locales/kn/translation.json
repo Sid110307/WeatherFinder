@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "ಸ್ಥಾನ ಸ್ವಾಧೀನದ ಅವಧಿ ಮೀರಿದೆ",
-	"User denied geolocation service": "ಜಿಯೋಲೊಕೇಶನ್ ಸೇವೆಯನ್ನು ಬಳಕೆದಾರರು ನಿರಾಕರಿಸಿದ್ದಾರೆ",
+	"Geolocation denied or connection failed": "ಜಿಯೋಲೊಕೇಶನ್ ನಿರಾಕರಿಸಲಾಗಿದೆ ಅಥವಾ ಸಂಪರ್ಕ ವಿಫಲವಾಗಿದೆ",
 	"Your browser doesn't support location services.": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ಸ್ಥಳ ಸೇವೆಗಳನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.",
 	"Weather Icon": "ಹವಾಮಾನ ಐಕಾನ್",
 	"Nearest location": "ಹತ್ತಿರದ ಸ್ಥಳ",

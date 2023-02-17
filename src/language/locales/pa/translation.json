@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "ਸਥਿਤੀ ਪ੍ਰਾਪਤੀ ਦਾ ਸਮਾਂ ਸਮਾਪਤ ਹੋਇਆ",
-	"User denied geolocation service": "ਉਪਭੋਗਤਾ ਨੇ ਭੂ-ਸਥਾਨ ਸੇਵਾ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ",
+	"Geolocation denied or connection failed": "ਜੀਓ ਟਿਕਾਣਾ ਅਸਵੀਕਾਰ ਕੀਤਾ ਗਿਆ ਜਾਂ ਕਨੈਕਸ਼ਨ ਅਸਫਲ ਰਿਹਾ",
 	"Your browser doesn't support location services.": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ ਟਿਕਾਣਾ ਸੇਵਾਵਾਂ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ ਹੈ।",
 	"Weather Icon": "ਮੌਸਮ ਪ੍ਰਤੀਕ",
 	"Nearest location": "ਨਜ਼ਦੀਕੀ ਟਿਕਾਣਾ",

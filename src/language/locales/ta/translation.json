@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "பதவி கையகப்படுத்தும் நேரம் முடிந்தது",
-	"User denied geolocation service": "புவிஇருப்பிட சேவையை பயனர் மறுத்தார்",
+	"Geolocation denied or connection failed": "புவி இருப்பிடம் மறுக்கப்பட்டது அல்லது இணைப்பு தோல்வியடைந்தது",
 	"Your browser doesn't support location services.": "உங்கள் உலாவி இருப்பிடச் சேவைகளை ஆதரிக்காது.",
 	"Weather Icon": "வானிலை ஐகான்",
 	"Nearest location": "அருகிலுள்ள இடம்",

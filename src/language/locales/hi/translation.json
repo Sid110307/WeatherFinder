@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "स्थिति अधिग्रहण का समय समाप्त",
-	"User denied geolocation service": "जियोलोकेशन सेवा से वंचित किया गया",
+	"Geolocation denied or connection failed": "भौगोलिक स्थान अस्वीकृत या कनेक्शन विफल",
 	"Your browser doesn't support location services.": "आपके ब्राउज़र को स्थिति सेवाएँ समर्थन नहीं करता है।",
 	"Weather Icon": "मौसम आइकन",
 	"Nearest location": "निकटतम स्थान",

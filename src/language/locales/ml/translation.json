@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "സ്ഥാനം ഏറ്റെടുക്കൽ സമയം കഴിഞ്ഞു",
-	"User denied geolocation service": "ഉപയോക്തൃനിരവധിക്കുന്നതിന് സ്ഥാനം അനുമതിയില്ല",
+	"Geolocation denied or connection failed": "ജിയോലൊക്കേഷൻ നിരസിച്ചു അല്ലെങ്കിൽ കണക്ഷൻ പരാജയപ്പെട്ടു",
 	"Your browser doesn't support location services.": "താങ്കളുടെ ബ്രൗസർ സ്ഥാനം സാധ്യതയ്ക്കുന്നില്ല",
 	"Weather Icon": "കാലാവസ്ഥ ഐക്കൺ",
 	"Nearest location": "പട്ടികയില്ലാത്ത സ്ഥാന",

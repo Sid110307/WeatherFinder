@@ -1,6 +1,6 @@
 {
 	"Position acquisition timed out": "پوزیشن کے حصول کا وقت ختم ہو گیا۔",
-	"User denied geolocation service": "صارف نے جغرافیائی مقام کی خدمت سے انکار کر دیا۔",
+	"Geolocation denied or connection failed": "جیو مقام سے انکار یا کنکشن ناکام ہو گیا۔",
 	"Your browser doesn't support location services.": "آپ کا براؤزر لوکیشن سروسز کو سپورٹ نہیں کرتا ہے۔",
 	"Weather Icon": "موسم کا آئیکن",
 	"Nearest location": "قریب ترین مقام",
