@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/WeatherFinder/static/css/main.f52de409.css",
-    "main.js": "/WeatherFinder/static/js/main.ee837e23.js",
+    "main.js": "/WeatherFinder/static/js/main.7c22f9c0.js",
     "index.html": "/WeatherFinder/index.html",
     "static/media/getFetch.cjs": "/WeatherFinder/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.f52de409.css.map": "/WeatherFinder/static/css/main.f52de409.css.map",
-    "main.ee837e23.js.map": "/WeatherFinder/static/js/main.ee837e23.js.map"
+    "main.7c22f9c0.js.map": "/WeatherFinder/static/js/main.7c22f9c0.js.map"
   },
   "entrypoints": [
     "static/css/main.f52de409.css",
-    "static/js/main.ee837e23.js"
+    "static/js/main.7c22f9c0.js"
   ]
 }
