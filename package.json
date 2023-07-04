@@ -49,7 +49,7 @@
 		"postcss-cli": "^10.0.0",
 		"postcss-import": "^15.0.0",
 		"postcss-nested": "^6.0.1",
-		"postcss-preset-env": "^8.0.1",
+		"postcss-preset-env": "^9.0.0",
 		"postcss-scss": "^4.0.4",
 		"react-app-rewired": "^2.2.1"
 	}
