@@ -10,7 +10,7 @@
 		"i18next-http-backend": "^2.1.1",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
-		"react-i18next": "^12.1.5",
+		"react-i18next": "^13.0.1",
 		"react-scripts": "5.0.1",
 		"sass": "^1.52.3",
 		"sass-loader": "^13.0.0"
