@@ -1,102 +1,102 @@
 @use "../index" as var;
 
 .advanced-mode-btn {
-	position: fixed;
-	height: 30px;
-	background-color: var.$secondary-color;
-	border-radius: 1000rem;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-	cursor: pointer;
-	display: flex;
-	padding: 10px;
-	justify-content: center;
-	align-items: center;
-	border: none;
-	transition: all 0.5s ease;
+    position: fixed;
+    height: 30px;
+    background-color: var.$secondary-color;
+    border-radius: 1000rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: all 0.5s ease;
 
-	span {
-		color: var.$primary-color;
-	}
+    span {
+        color: var.$primary-color;
+    }
 
-	&:hover,
-	&:active {
-		background-color: var.$primary-color;
+    &:hover,
+    &:active {
+        background-color: var.$primary-color;
 
-		span,
-		p {
-			color: var.$secondary-color;
-		}
-	}
+        span,
+        p {
+            color: var.$secondary-color;
+        }
+    }
 
-	&:focus {
-		outline: none;
-	}
+    &:focus {
+        outline: none;
+    }
 
-	&:active {
-		transform: scale(0.9);
-	}
+    &:active {
+        transform: scale(0.9);
+    }
 }
 
 .advanced-mode-btn-wrapper {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	margin-top: 10px;
-	transition: all 0.5s ease;
-	position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.5s ease;
+    position: fixed;
 }
 
 .advanced-mode-container {
-	position: fixed;
-	margin-top: 10px;
-	right: 0;
-	width: 300px;
-	height: 440px;
-	background-color: var.$secondary-color;
-	border-radius: 20px;
-	transition: all 0.5s ease;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-	visibility: hidden;
-	opacity: 0;
-	padding: 10px;
-	gap: 5px;
+    position: fixed;
+    margin-top: 10px;
+    right: 0;
+    width: 300px;
+    height: 440px;
+    background-color: var.$secondary-color;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px;
+    gap: 5px;
 
-	display: grid;
-	grid-auto-flow: row;
+    display: grid;
+    grid-auto-flow: row;
 
-	.data > p {
-		display: grid;
-		grid-auto-flow: column;
-		grid-auto-columns: 1fr 1fr;
+    .data > p {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr 1fr;
 
-		span {
-			padding: 1px 5px;
-			word-wrap: break-word;
+        span {
+            padding: 1px 5px;
+            word-wrap: break-word;
 
-			display: flex;
-			align-items: center;
+            display: flex;
+            align-items: center;
 
-			&:nth-child(even) {
-				border: 1px solid var.$primary-color;
-				border-top-right-radius: 20px;
-				border-bottom-right-radius: 20px;
-			}
+            &:nth-child(even) {
+                border: 1px solid var.$primary-color;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
 
-			&:nth-child(odd) {
-				border: 1px solid var.$primary-color;
-				border-right: none;
+            &:nth-child(odd) {
+                border: 1px solid var.$primary-color;
+                border-right: none;
 
-				border-top-left-radius: 20px;
-				border-bottom-left-radius: 20px;
-			}
-		}
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+        }
 
-		&:nth-child(1) {
-			text-align: left;
-		}
+        &:nth-child(1) {
+            text-align: left;
+        }
 
-		&:nth-child(2) {
-			text-align: right;
-		}
-	}
+        &:nth-child(2) {
+            text-align: right;
+        }
+    }
 }

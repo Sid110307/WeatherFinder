@@ -12,3 +12,5 @@ yarn-*.log
 npm-*.log
 
 .markdownlint.yml
+
+.env
