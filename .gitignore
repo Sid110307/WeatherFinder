@@ -1,8 +1,14 @@
 .idea/
+.vs/
+.vscode/
+
 node_modules/
 build/
+.yarn/
+
 package-lock.json
 yarn.lock
 yarn-*.log
 npm-*.log
+
 .markdownlint.yml
