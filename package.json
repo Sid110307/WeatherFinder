@@ -13,7 +13,7 @@
         "react-i18next": "^13.5.0",
         "react-scripts": "5.0.1",
         "sass": "^1.69.6",
-        "sass-loader": "^13.3.3"
+        "sass-loader": "^14.2.0"
     },
     "scripts": {
         "dev": "react-scripts start",
